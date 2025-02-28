@@ -5,13 +5,13 @@ import "./App.css";
 import bgMain from "./assets/bg.jpg"; // Background luôn hiển thị
 import bgLight from "./assets/bg-light.png"; // Background có mặt trời
 import bgDark from "./assets/bg-dark.png"; // Background có mặt trăng
-
+import DigitalClock from "./components/DigitalClock";
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [timeZone, setTimeZone] = useState("Asia/Ho_Chi_Minh");
 
   return (
-    <div className=" w-full h-full flex flex-col items-center justify-center transition-all duration-500">
+    <div className=" w-full  h-full flex flex-col items-center justify-center transition-all duration-500">
       {/* Background chính */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50"
@@ -35,7 +35,10 @@ export default function App() {
         <div className="w-full flex justify-center">
           <AnalogClock timeZone={timeZone} />
         </div>
-
+        <div className="w-full flex flex-col items-center">
+  
+  <DigitalClock timeZone={timeZone} />
+</div>
         {/* Điều khiển */}
         <div className="mt-4 w-full flex justify-center">
           <Controls darkMode={darkMode} setDarkMode={setDarkMode} />
